@@ -7,11 +7,11 @@ import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from 
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class NgCardElementComponent implements OnInit {
+  data: any;
+
   @Input() title: string;
   @Input() name: string;
-  @Input() time = new Date();
   @Input() caption: string;
-  @Input() avatar: string;
   @Input() image: string;
 
   @Output() likeNotify = new EventEmitter<boolean>();
@@ -22,6 +22,16 @@ export class NgCardElementComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.data = {
+      title: this.title,
+      name: this.name,
+      caption: this.caption,
+      image: this.image,
+    };
+  }
+
+  showData() {
+    console.log(this.data);
   }
 
   likeEvent() {

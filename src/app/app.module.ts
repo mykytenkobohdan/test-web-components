@@ -1,21 +1,16 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule, Injector} from '@angular/core';
+import {Injector, NgModule} from '@angular/core';
 import {createCustomElement} from '@angular/elements';
 
 import {AppComponent} from './app.component';
 import {NgCardElementComponent} from './ng-card-element/ng-card-element.component';
-import {AlertComponent} from './alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgCardElementComponent,
-    AlertComponent
+    NgCardElementComponent
   ],
-  entryComponents: [
-    NgCardElementComponent,
-    AlertComponent
-  ], // use entryComponents array instaed of bootstrap because it will be added dynamically.
+  entryComponents: [NgCardElementComponent], // use entryComponents array instaed of bootstrap because it will be added dynamically.
   imports: [
     BrowserModule
   ],
@@ -24,22 +19,16 @@ import {AlertComponent} from './alert.component';
 })
 export class AppModule {
   constructor(private injector: Injector) {
-    this.ngDoBootstrap();
+    this.createCustomElements();
   }
 
-  ngDoBootstrap() {
+  createCustomElements() {
     // using createCustomElement from angular package it will convert angular component to stander web component
     const el = createCustomElement(NgCardElementComponent, {
       injector: this.injector
     });
 
     // using built in the browser to create your own custom element name
-    customElements.define('facebook-card', el);
-
-    const alert = createCustomElement(AlertComponent, {
-      injector: this.injector
-    });
-
-    customElements.define('alert-element', alert);
+    customElements.define('custom-card', el);
   }
 }

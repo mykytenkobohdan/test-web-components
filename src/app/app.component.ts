@@ -1,5 +1,4 @@
-import {Component, Injector, OnInit} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +9,7 @@ export class AppComponent implements OnInit {
   features: any[] = [];
   content = null;
 
-  constructor(private injector: Injector, domSanitizer: DomSanitizer) {
-    setTimeout(() => {
-      this.content = domSanitizer.bypassSecurityTrustHtml('<alert-element message="Custom element component"></alert-element>');
-    }, 100);
+  constructor() {
   }
 
   ngOnInit(): void {
