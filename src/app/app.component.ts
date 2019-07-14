@@ -6,29 +6,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  features: any[] = [];
-
   constructor() {
   }
 
   ngOnInit(): void {
-    this.features = [
-      {
-        link: 'https://angular.io/tutorial',
-        name: 'Tour of Heroes'
-      },
-      {
-        link: 'https://angular.io/tutorial',
-        name: 'Tour of Heroes'
-      },
-      {
-        link: 'https://angular.io/tutorial',
-        name: 'Tour of Heroes'
-      },
-      {
-        link: 'https://angular.io/tutorial',
-        name: 'Tour of Heroes'
-      }
-    ];
   }
 }
