@@ -7,7 +7,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   features: any[] = [];
-  content = null;
 
   constructor() {
   }
