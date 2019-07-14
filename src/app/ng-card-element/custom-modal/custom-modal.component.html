@@ -1,0 +1,9 @@
+<div class="overlay">
+  <div class="custom-modal p-3">
+    <h2>{{data.title}}</h2>
+    <h3>{{data.name}}</h3>
+    <p>{{data.caption}}</p>
+    <img [src]="data.image" class="img-fluid" alt="">
+    <button class="btn btn-danger mt-3" (click)="close()">close</button>
+  </div>
+</div>
