@@ -8,6 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from 
 })
 export class NgCardElementComponent implements OnInit {
   data: any;
+  showModal = false;
 
   @Input() title: string;
   @Input() name: string;
@@ -28,10 +29,6 @@ export class NgCardElementComponent implements OnInit {
       caption: this.caption,
       image: this.image,
     };
-  }
-
-  showData() {
-    console.log(this.data);
   }
 
   likeEvent() {

@@ -1,6 +1,8 @@
 <div>
-  <button class="btn btn-primary mr-3" (click)="showData()">show data</button>
+  <button class="btn btn-primary mr-3" (click)="showModal = true">show data</button>
   <button class="btn btn-primary mr-3" (click)="likeEvent()">like</button>
   <button class="btn btn-primary mr-3" (click)="shareEvent()">share</button>
   <button class="btn btn-primary" (click)="commentEvent()">comment</button>
 </div>
+
+<app-custom-modal *ngIf="showModal" (onClose)="showModal = false" [data]="data"></app-custom-modal>

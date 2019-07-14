@@ -4,11 +4,13 @@ import {createCustomElement} from '@angular/elements';
 
 import {AppComponent} from './app.component';
 import {NgCardElementComponent} from './ng-card-element/ng-card-element.component';
+import { CustomModalComponent } from './ng-card-element/custom-modal/custom-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgCardElementComponent
+    NgCardElementComponent,
+    CustomModalComponent
   ],
   entryComponents: [NgCardElementComponent], // use entryComponents array instaed of bootstrap because it will be added dynamically.
   imports: [
